@@ -29,25 +29,10 @@
 	<meta name="msapplication-TileImage" content="/assets/icon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#00bcd4">
   
-
-
-  
-
-  
-
-  <!-- Async Google Analytics: change UA-71073175-1 to be your site's ID -->
-  <script>
-    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-    ga('create', 'UA-71073175-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-  <script async src="https://www.google-analytics.com/analytics.js"></script>
-  <!-- End Google Analytics -->
-
-  <!-- CSS will be injected by webpack here -->
-  <!-- Preload link tags will be injected by webpack here -->
-
-<link href="main.92fb2dde70580c04be3cc5706f404ab9.css" rel="stylesheet"><link rel="preload" href="polyfills.daeac2b6ca5c7d42b1f5.bundle.js" as="script"/><link rel="preload" href="main.4a2675ff08bb69f96d6c.bundle.js" as="script"/></head>
+  <link href="main.css" rel="stylesheet">
+  <link rel="preload" href="polyfills.bundle.js" as="script"/>
+  <link rel="preload" href="main.bundle.js" as="script"/>
+</head>
 
 <body>
 
@@ -55,6 +40,7 @@
     Loading...
   </app>
 
-  <!-- Scripts will be injected by webpack here -->
-<script type="text/javascript" src="polyfills.daeac2b6ca5c7d42b1f5.bundle.js"></script><script type="text/javascript" src="main.4a2675ff08bb69f96d6c.bundle.js" async></script></body>
+  <script type="text/javascript" src="polyfills.bundle.js"></script>
+  <script type="text/javascript" src="main.bundle.js" async></script>
+</body>
 </html>
