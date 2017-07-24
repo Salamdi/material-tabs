@@ -1,0 +1,25 @@
+@import '~@angular/material/_theming.scss';
+
+
+
+$background-grey:     map_get($mat-grey, 50);
+$grey:                rgba(0, 0, 0, .54);
+$font-grey:           rgba(0, 0, 0, .38);
+$pale-grey:           rgba(0, 0, 0, .12);
+$dark-grey:           rgba(0, 0, 0, .72);
+$primary-blue:        map_get($mat-blue, 700);
+$warn:                map_get($mat-red, 500);
+$cyan:                map_get($mat_cyan, 500);
+$background-cyan:     map_get($mat_cyan, 100);
+
+$stepper-index:       map_get($mat-grey, 500);
+$stepper-border:      map_get($mat-grey, 100);
+
+$status-new:          map_get($mat-light-blue, 50);
+$status-in-progress:  map_get($mat-amber, A200);
+$status-denied:       map_get($mat-red, 500);
+$status-accepted:     map_get($mat-green, A200);
+
+$icon-grey:           #9E9E9E;
+$border-grey:         #e0e0e0;
+$nav-button-color:    #00838F;

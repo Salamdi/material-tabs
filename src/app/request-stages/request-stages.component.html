@@ -1,0 +1,67 @@
+<div class="stages-container">
+    <md-spinner *ngIf="spinner"></md-spinner>
+    <md-tab-group dynamicHeight="true" *ngIf="functionsList">
+        <md-tab *ngFor="let stage of stages">
+            <ng-template md-tab-label>
+                <p class="stage-number">{{stage.number}}</p>
+                <p class="stage-name">{{stage.name}}</p>
+            </ng-template>
+
+            <form class="conf"
+                  (ngSubmit)="change(stage, $event); conf.reset(stage); sort()"
+                  #conf="ngForm">
+                <md-input-container>
+                    <input required
+                           mdInput
+                           [ngModel]="stage.name"
+                           name="name"
+                           #name="ngModel"
+                           type="text"
+                           autocomplete="off"
+                           placeholder="Название этапа">
+                </md-input-container>
+                <md-input-container>
+                    <input required
+                           mdInput
+                           [ngModel]="stage.number"
+                           name="number"
+                           #number="ngModel"
+                           type="number"
+                           min="1"
+                           autocomplete="off"
+                           placeholder="Номер этапа">
+                </md-input-container>
+                <button md-raised-button
+                        type="submit"
+                        [disabled]="!conf.form.valid || conf.form.pristine">
+                    Изменить и отсортировать
+                </button>
+            </form>
+
+            <button md-mini-fab
+                    mdTooltip="Удалить этап"
+                    mdTooltipPosition="before"
+                    (click)="deleteStage(stage)"
+                    class="delete-stage-btn"
+                    color="warn"><md-icon>delete</md-icon></button>
+
+            <stage-node [stage]="stage" [functionsList]="functionsList"></stage-node>
+        </md-tab>
+    </md-tab-group>
+    <button md-fab
+            class="add-stage-btn"
+            color="warn"
+            mdTooltip="Добавить этап"
+            mdTooltipPosition="before"
+            (click)="addStage()">
+        <md-icon>add</md-icon>
+    </button>
+    <button md-fab
+            class="save-stages-btn"
+            color="warn"
+            mdTooltip="Сохранить"
+            mdTooltipPosition="before"
+            (click)="save()">
+        <md-icon>save</md-icon>
+    </button>
+</div>

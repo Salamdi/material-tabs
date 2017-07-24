@@ -1,0 +1,44 @@
+<div class="stage-node-container">
+
+    <!-- Stage Functions -->
+    <div class="stage-functions">
+        <h3>Функции</h3>
+        <div *ngFor="let func of functions" class="item">
+            <md-checkbox [(ngModel)]="func.check" (change)="onChange(func)">{{func.name}}</md-checkbox>
+        </div>
+    </div>
+    <!-- Stage Functions End -->
+
+    <!-- Stage Assignees -->
+    <div class="stage-assignees">
+        <h3>Люди</h3>
+        <div class="item last">
+
+            <!-- Search assignees start -->
+            <md-input-container class="search-field">
+                <input mdInput placeholder="Поиск" [mdAutocomplete]="auto" [formControl]="searchCtrl">
+            </md-input-container>
+
+            <md-autocomplete #auto="mdAutocomplete" [displayWith]="displayFn">
+                <md-option *ngFor="let person of people" [value]="person" (onSelectionChange)="onSelectAssignee(person)">
+                    {{person.firstname}} {{person.lastname}} {{person.patronymic}}
+                </md-option>
+            </md-autocomplete>
+            <!--  Search assignees end  -->
+
+            <button md-raised-button
+                    class="add-btn"
+                    [disabled]="!selectedAssignee"
+                    (click)="addAssignee()">
+                <md-icon>person_add</md-icon>
+            </button>
+
+        </div>
+        <div *ngFor="let assignee of stage.assignees" class="item">
+            <span>{{assignee.firstname}} {{assignee.lastname}} {{assignee.patronymic}}</span>
+            <button md-icon-button class="delete-btn" (click)="deleteAssignee(assignee)"><md-icon>delete</md-icon></button>
+        </div>
+    </div>
+    <!-- Stage Assignees -->
+
+</div>

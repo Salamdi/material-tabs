@@ -1,0 +1,38 @@
+@import '../../../styles/_variables.scss';
+
+.stage-node-container {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.stage-assignees {
+  flex: 1;
+  margin-left: 48px;
+}
+
+.stage-functions {
+  flex: 1;
+  border-right: 1px solid $border-grey;
+  margin-right: 48px;
+}
+
+.item {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*&.last { // for the search
+    justify-content: center;
+    margin-top: 16px;
+  }*/
+}
+
+.search-field {
+  min-width: 400px;
+}
+
+.add-btn {
+  margin-left: 8px;
+}

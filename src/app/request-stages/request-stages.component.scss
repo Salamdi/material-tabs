@@ -1,0 +1,71 @@
+@import '../../styles/_variables.scss';
+
+.stages-container {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
+md-spinner {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.add-stage-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+}
+
+.save-stages-btn {
+  position: fixed;
+  bottom: 104px;
+  right: 32px;
+}
+
+.edit-index {
+  position: absolute;
+  visibility: hidden;
+  left: 0;
+  top: 4px;
+}
+
+.index-settings {
+  position: absolute;
+  top: 0;
+  left: 8px;
+}
+
+md-tab-group {
+  border: 1px solid $pale-grey;
+}
+
+.conf {
+  margin-top: 8px;
+  text-align: center;
+  md-input-container,
+  button {
+    margin: 8px;
+  }
+}
+
+.delete-stage-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.mat-tab-header, .mat-tab-body-wrapper {
+  z-index: 0;
+}
+
+.stage-number {
+  transform: translateY(-10%);
+}
+
+.stage-name {
+  color: $icon-grey;
+  transform: translateY(-75%);
+}
